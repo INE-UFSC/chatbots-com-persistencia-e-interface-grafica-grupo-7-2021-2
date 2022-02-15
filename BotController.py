@@ -8,7 +8,7 @@ class BotController:
     def __init__(self):
         self.__telaBots = BotView()
         self.__bots = {'bot-feliz': BotFeliz('Feliciano'), 'bot-triste': BotTriste('Universitário'), 'bot-zangado': BotZangado('Yoda')}
-        self.__bot_escolhido = self.__bots['bot-zangado']
+        self.__bot_escolhido = self.__bots['bot-triste']
 
     def inicio(self):
         self.__telaBots.tela_consulta()
