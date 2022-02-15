@@ -2,11 +2,13 @@ from BotView import BotView
 from Bots.BotFeliz import BotFeliz
 from Bots.BotTriste import BotTriste
 from Bots.BotZangado import BotZangado
-import PySimpleGUI as sg 
+import PySimpleGUI as sg
+from BotDAO import BotDAO
 
 class BotController:
     def __init__(self):
         self.__telaBots = BotView()
+        self.__BotDAO = BotDAO()
         self.__bots = {'bot-feliz': BotFeliz('Feliciano'), 'bot-triste': BotTriste('Universitário'), 'bot-zangado': BotZangado('Yoda')}
         self.__bot_escolhido = self.__bots['bot-zangado']
 
@@ -33,6 +35,15 @@ class BotController:
             
             elif event == 'Adeus':
                 resultado = self.__bot_escolhido.executa_comando(4)
+            
+            elif event == 'Exportar':
+                self.__BotDAO.add(self.__bot_escolhido)
+                resultado = "Bot exportado"
+            
+            elif event == 'Importar':
+                
+                    self.__BotDAO.get(nomeBot)
+                    resultado = "Bot exportado"
             
             if resultado != '':
                 dados = str(resultado)

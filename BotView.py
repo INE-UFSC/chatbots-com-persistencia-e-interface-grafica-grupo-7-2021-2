@@ -10,6 +10,7 @@ class BotView():
         self.__container = [
             [sg.Text('Selecione a ação desejada:')],
             [sg.Button('Bom Dia'), sg.Button('Qual o seu nome?'), sg.Button('Quero um conselho'), sg.Button('Adeus')],
+            [sg.Button('Exportar'), sg.Button('Importar')]
             [sg.Text('', key='resultado')]
         ]
         self.__window = sg.Window("Fale com o Bot", self.__container ,font=("Helvetica", 14))

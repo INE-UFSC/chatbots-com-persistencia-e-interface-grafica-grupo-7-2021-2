@@ -4,7 +4,7 @@ from Bots.BotTriste import BotTriste
 from Bots.BotZangado import BotZangado
 from Bots.Bot import Bot
 
-class botDAO(DAO):
+class BotDAO(DAO):
     def __init__(self):
         super().__init__('bots.pkl')
     
